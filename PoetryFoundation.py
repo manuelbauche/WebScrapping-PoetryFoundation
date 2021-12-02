@@ -39,10 +39,6 @@ def parse(url):
         tags = [tag.text for tag in tags]
         tags = ",".join(tags)
 
-        #print(poet)
-        #sys.stdout.write('.')
-        #sys.stdout.flush()
-        #df_.iloc[i] = [title,poem,poet,tags]
         return(title,poem,poet,tags)
 
     except Exception as IndexError:
@@ -60,9 +56,9 @@ def load(total_pages, total_batches):
 
 def main():
     #File name details.
-    total_pages   = 400
+    total_pages   = 10
     urls_per_page = 20
-    total_batches = 1
+    total_batches = 5
     total_poems = total_pages*urls_per_page
 
     url_file_names = load(total_pages, total_batches)
@@ -97,7 +93,7 @@ def main():
             for row,rowNo in zip(data,list(range(total_poems))):
                 dataF.iloc[rowNo] = [row[0],row[1],row[2],row[3]]
             dataF = dataF.dropna()
-            dataF.to_csv("G:\\OneDrive - University of Edinburgh\\Poem Generation\\WebScrapping for Poems\\PoemData\\PoetryFoundationData"+file_name[len("PoetryFoundationUrls"):]+ str(i) +"-"+str(i+200)+".csv")
+            dataF.to_csv("C:\\Users\\manue\\OneDrive\\Documents\\University\\2021 Fall\\CS 490A\\Project\\WebScrapping-PoetryFoundation\\PoetryFoundationData"+file_name[len("PoetryFoundationUrls"):]+ str(i) +"-"+str(i+200)+".csv")
             i=i+200
 
 

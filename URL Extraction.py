@@ -5,6 +5,7 @@ import numpy as np #Using this to efficiently create the output file.
 
 # For simulating the table on the webpage which is dynamically loaded.
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -18,7 +19,7 @@ links_per_page  = 20
 
 def UrlExtract(batch_number):
     #Setting up the browser
-    path = r"C:\\Users\\divyb\\OneDrive\\Desktop\\chromedriver.exe" #Path for my Chrome driver.
+    path = r"C:\\Users\\manue\\OneDrive\\Documents\\University\\2021 Fall\\CS 490A\\Project\\chromedriver_win32\\cromedriver.exe" #Path for my Chrome driver.
     driver = webdriver.Chrome(executable_path = path) # Setting up the browser with selenium.
 
 
